@@ -1,0 +1,130 @@
+---
+import Icons from './Icons.astro';
+
+const pricingTiers = [
+  {
+    name: 'Discovery Call',
+    price: 'FREE',
+    duration: '30 minutes',
+    description: 'Perfect for exploring possibilities',
+    features: [
+      'Technical consultation',
+      'Architecture review',
+      'Roadmap outline',
+      'Cost estimation',
+      'No commitment'
+    ],
+    cta: 'Book Free Call',
+    href: '#contact',
+    popular: false
+  },
+  {
+    name: 'Sprint Package',
+    price: 'From €5,000',
+    duration: '2-week sprint',
+    description: 'Fast delivery of specific features',
+    features: [
+      'Dedicated developer(s)',
+      'Daily standups',
+      'Sprint planning',
+      'Code review included',
+      'Documentation',
+      'Post-sprint support'
+    ],
+    cta: 'Start Sprint',
+    href: '#contact',
+    popular: true
+  },
+  {
+    name: 'Enterprise',
+    price: 'Custom',
+    duration: 'Long-term partnership',
+    description: 'Full-service development & consultancy',
+    features: [
+      'Dedicated team',
+      'Custom SLA',
+      'Priority support',
+      'Compliance assistance',
+      'Architecture design',
+      'Ongoing maintenance'
+    ],
+    cta: 'Contact Sales',
+    href: '#contact',
+    popular: false
+  }
+];
+---
+
+<section id="pricing" class="py-24">
+  <div class="container mx-auto px-6">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold text-light mb-4">
+        Transparent 
+        <span class="bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent">
+          Pricing
+        </span>
+      </h2>
+      <p class="text-xl text-light/60 max-w-2xl mx-auto">
+        Flexible engagement models to fit your needs and budget
+      </p>
+    </div>
+
+    <!-- Pricing Cards -->
+    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      {pricingTiers.map((tier) => (
+        <div class={`relative group ${tier.popular ? 'md:-mt-4' : ''}`}>
+          {/* Popular Badge */}
+          {tier.popular && (
+            <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-primary-500 to-accent-500 text-white px-4 py-1 rounded-full text-sm font-semibold">
+              Most Popular
+            </div>
+          )}
+
+          {/* Card */}
+          <div class={`h-full bg-gradient-to-br from-primary-950/50 to-primary-900/30 rounded-xl border ${tier.popular ? 'border-primary-500/50' : 'border-primary-800/30'} p-8 hover:border-primary-600/50 transition-all hover:shadow-xl hover:shadow-primary-500/10`}>
+            {/* Header */}
+            <div class="mb-8">
+              <h3 class="text-2xl font-bold text-light mb-2">{tier.name}</h3>
+              <div class="mb-2">
+                <span class="text-3xl font-bold text-primary-400">{tier.price}</span>
+                {tier.duration && (
+                  <span class="text-light/60 ml-2">/ {tier.duration}</span>
+                )}
+              </div>
+              <p class="text-light/60 text-sm">{tier.description}</p>
+            </div>
+
+            {/* Features */}
+            <ul class="space-y-3 mb-8">
+              {tier.features.map((feature) => (
+                <li class="flex items-start space-x-3">
+                  <Icons name="check" size={16} class="text-accent-400 mt-1 flex-shrink-0" />
+                  <span class="text-light/80 text-sm">{feature}</span>
+                </li>
+              ))}
+            </ul>
+
+            {/* CTA */}
+            <a 
+              href={tier.href} 
+              class={`block text-center py-3 px-6 rounded-lg font-semibold transition-all ${
+                tier.popular 
+                  ? 'bg-gradient-to-r from-primary-500 to-accent-500 text-white hover:shadow-lg hover:shadow-primary-500/25' 
+                  : 'bg-primary-900/50 text-light border border-primary-700/50 hover:bg-primary-900/70'
+              }`}
+            >
+              {tier.cta}
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    {/* Additional Info */}
+    <div class="mt-16 text-center">
+      <p class="text-light/60 mb-2">All prices exclude VAT • Flexible payment terms available</p>
+      <p class="text-light/60">Need something different? <a href="#contact" class="text-primary-400 hover:text-primary-300 underline">Let's talk</a></p>
+    </div>
+  </div>
+</section>

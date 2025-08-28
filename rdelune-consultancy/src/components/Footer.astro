@@ -1,0 +1,83 @@
+---
+import Icons from './Icons.astro';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-primary-950/50 border-t border-primary-800/30 py-12">
+  <div class="container mx-auto px-6">
+    <div class="grid md:grid-cols-4 gap-8 mb-8">
+      <!-- Brand -->
+      <div>
+        <div class="flex items-center space-x-2 mb-4">
+          <div class="w-10 h-10 bg-gradient-to-br from-primary-500 to-accent-500 rounded-lg flex items-center justify-center">
+            <Icons name="code" size={20} class="text-white" />
+          </div>
+          <span class="text-xl font-semibold text-light">RDeLune</span>
+        </div>
+        <p class="text-light/60 text-sm">
+          Expert software consultancy delivering fast, scalable solutions.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-light font-semibold mb-4">Quick Links</h3>
+        <ul class="space-y-2">
+          <li><a href="#services" class="text-light/60 hover:text-primary-400 transition-colors text-sm">Services</a></li>
+          <li><a href="#clients" class="text-light/60 hover:text-primary-400 transition-colors text-sm">Clients</a></li>
+          <li><a href="#pricing" class="text-light/60 hover:text-primary-400 transition-colors text-sm">Pricing</a></li>
+          <li><a href="#contact" class="text-light/60 hover:text-primary-400 transition-colors text-sm">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Services -->
+      <div>
+        <h3 class="text-light font-semibold mb-4">Services</h3>
+        <ul class="space-y-2">
+          <li><a href="#services" class="text-light/60 hover:text-primary-400 transition-colors text-sm">Consultancy</a></li>
+          <li><a href="#services" class="text-light/60 hover:text-primary-400 transition-colors text-sm">Development</a></li>
+          <li><a href="#services" class="text-light/60 hover:text-primary-400 transition-colors text-sm">Startup Support</a></li>
+          <li><a href="#services" class="text-light/60 hover:text-primary-400 transition-colors text-sm">DevOps</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h3 class="text-light font-semibold mb-4">Get in Touch</h3>
+        <ul class="space-y-2">
+          <li>
+            <a href="mailto:contact@rdelune.com" class="flex items-center space-x-2 text-light/60 hover:text-primary-400 transition-colors text-sm">
+              <Icons name="mail" size={16} />
+              <span>contact@rdelune.com</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://linkedin.com/in/rdelune" target="_blank" rel="noopener" class="flex items-center space-x-2 text-light/60 hover:text-primary-400 transition-colors text-sm">
+              <Icons name="linkedin" size={16} />
+              <span>LinkedIn</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/rdelune" target="_blank" rel="noopener" class="flex items-center space-x-2 text-light/60 hover:text-primary-400 transition-colors text-sm">
+              <Icons name="github" size={16} />
+              <span>GitHub</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="border-t border-primary-800/30 pt-8 flex flex-col md:flex-row justify-between items-center">
+      <p class="text-light/40 text-sm mb-4 md:mb-0">
+        © {year} RDeLune Software Consultancy. All rights reserved.
+      </p>
+      <div class="flex space-x-6">
+        <a href="/privacy" class="text-light/40 hover:text-primary-400 transition-colors text-sm">Privacy Policy</a>
+        <a href="/terms" class="text-light/40 hover:text-primary-400 transition-colors text-sm">Terms of Service</a>
+        <a href="/gdpr" class="text-light/40 hover:text-primary-400 transition-colors text-sm">GDPR</a>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,45 @@
+---
+import Icons from './Icons.astro';
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-dark/80 backdrop-blur-lg border-b border-primary-900/20">
+  <nav class="container mx-auto px-6 py-4">
+    <div class="flex items-center justify-between">
+      <!-- Logo -->
+      <a href="/" class="flex items-center space-x-2 group">
+        <div class="w-10 h-10 bg-gradient-to-br from-primary-500 to-accent-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+          <Icons name="code" size={20} class="text-white" />
+        </div>
+        <span class="text-xl font-semibold text-light">RDeLune</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="#services" class="text-light/80 hover:text-primary-400 transition-colors">Services</a>
+        <a href="#clients" class="text-light/80 hover:text-primary-400 transition-colors">Clients</a>
+        <a href="#pricing" class="text-light/80 hover:text-primary-400 transition-colors">Pricing</a>
+        <a href="#contact" class="bg-gradient-to-r from-primary-500 to-accent-500 text-white px-6 py-2 rounded-lg hover:shadow-lg hover:shadow-primary-500/25 transition-all">
+          Book Call
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <label for="mobile-menu" class="md:hidden cursor-pointer">
+        <Icons name="menu" class="text-light" />
+      </label>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <input type="checkbox" id="mobile-menu" class="hidden peer" />
+  <div class="md:hidden peer-checked:block hidden bg-dark/95 backdrop-blur-lg absolute top-full left-0 right-0 border-b border-primary-900/20">
+    <div class="container mx-auto px-6 py-4 space-y-4">
+      <a href="#services" class="block text-light/80 hover:text-primary-400 transition-colors py-2">Services</a>
+      <a href="#clients" class="block text-light/80 hover:text-primary-400 transition-colors py-2">Clients</a>
+      <a href="#pricing" class="block text-light/80 hover:text-primary-400 transition-colors py-2">Pricing</a>
+      <a href="#contact" class="block bg-gradient-to-r from-primary-500 to-accent-500 text-white px-6 py-3 rounded-lg text-center">
+        Book Call
+      </a>
+    </div>
+  </div>
+</header>
