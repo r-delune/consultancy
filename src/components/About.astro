@@ -1,0 +1,83 @@
+---
+import Icons from './Icons.astro';
+
+const expertise = [
+  { area: 'Vibe Code Rescue', desc: 'Fix AI-generated code, refactor legacy systems' },
+  { area: 'SaaS Architecture', desc: 'Scalable design for all growth stages' },
+  { area: 'Medical Compliance', desc: 'ISO 62304, MDR, QMS implementation' },
+  { area: 'Technical Debt', desc: 'Strategic refactoring & modernization' },
+];
+---
+
+<section id="about" class="py-24">
+  <div class="container mx-auto px-6">
+    <div class="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+      <!-- Profile Image -->
+      <div class="relative group">
+        <div class="relative overflow-hidden rounded-2xl">
+          <img 
+            src="/images/profile.webp" 
+            alt="Software consultant profile"
+            class="w-full aspect-square object-cover rounded-2xl"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-dark/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        </div>
+        <!-- Floating Badge -->
+        <div class="absolute -bottom-4 -right-4 bg-gradient-to-br from-primary-500 to-accent-500 text-white px-6 py-3 rounded-lg shadow-lg">
+          <span class="text-2xl font-bold">15+</span>
+          <span class="text-sm block">Years Experience</span>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div>
+        <h2 class="text-3xl md:text-4xl font-bold text-light mb-6">
+          Expert 
+          <span class="bg-gradient-to-r from-accent-600 to-accent-400 bg-clip-text text-transparent">
+            SaaS Consultancy
+          </span> for 
+          <span class="bg-gradient-to-r from-accent-600 to-accent-400 bg-clip-text text-transparent">
+            Every Stage
+          </span>
+        </h2>
+        
+        <p class="text-light/70 text-lg mb-6">
+          Specializing in rescuing vibe-coded projects and transforming technical debt into scalable 
+          solutions. Whether you're fixing AI-generated code, scaling from MVP to enterprise, or 
+          navigating compliance requirements, I deliver pragmatic solutions that work.
+        </p>
+
+        <p class="text-light/70 mb-8">
+          From startup MVPs to enterprise architectures, I help teams at every stage build 
+          maintainable, compliant, and performant software that grows with your business.
+        </p>
+
+        <!-- Expertise Areas -->
+        <div class="grid sm:grid-cols-2 gap-4">
+          {expertise.map((item) => (
+            <div class="flex items-start space-x-3">
+              <Icons name="check" size={20} class="text-accent-400 mt-1 flex-shrink-0" />
+              <div>
+                <h3 class="text-light font-semibold">{item.area}</h3>
+                <p class="text-light/50 text-sm">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-8 flex items-center space-x-4">
+          <a href="https://linkedin.com/in/rdelune" target="_blank" rel="noopener" class="flex items-center space-x-2 text-primary-400 hover:text-primary-300">
+            <Icons name="linkedin" size={20} />
+            <span>View Full Profile</span>
+          </a>
+          <span class="text-light/30">•</span>
+          <a href="#contact" class="text-primary-400 hover:text-primary-300">
+            Let's Talk →
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

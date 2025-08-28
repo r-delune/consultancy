@@ -1,0 +1,140 @@
+---
+import Icons from './Icons.astro';
+
+const serviceCategories = {
+  consultancy: {
+    title: "Code Rescue & Auditing",
+    icon: "shield",
+    description: "Fix what's broken, optimize what works",
+    services: [
+      {
+        name: "Vibe Code Recovery",
+        desc: "Transform AI-generated code into production-ready solutions. Fix architectural issues.",
+      },
+      { 
+        name: "Technical Debt Resolution", 
+        desc: "Strategic refactoring, modernization roadmaps, performance optimization" 
+      },
+      { 
+        name: "Compliance & Standards", 
+        desc: "GDPR, ISO 62304, MDR compliance, security audits, QMS implementation" 
+      },
+    ],
+  },
+  development: {
+    title: "SaaS Development",
+    icon: "code",
+    description: "Build and scale at every stage",
+    services: [
+      { 
+        name: "MVP to Production", 
+        desc: "Rapid prototyping, iterative development, market-ready solutions" 
+      },
+      { 
+        name: "Full-Stack Engineering", 
+        desc: "React, Vue, Node.js, Laravel, TypeScript, modern cloud architecture" 
+      },
+      { 
+        name: "API & Integration", 
+        desc: "RESTful APIs, GraphQL, third-party integrations, webhook systems" 
+      },
+      { 
+        name: "DevOps & Deployment", 
+        desc: "Docker, AWS, CI/CD pipelines, monitoring, auto-scaling" 
+      },
+    ],
+  },
+  startup: {
+    title: "Growth & Scaling",
+    icon: "rocket",
+    description: "Strategic guidance for every growth stage",
+    services: [
+      { 
+        name: "Startup → Scale-up", 
+        desc: "Architecture evolution, team scaling, process optimization" 
+      },
+      {
+        name: "Performance & Reliability",
+        desc: "Load testing, optimization, SLA implementation, monitoring",
+      },
+      { 
+        name: "Team Augmentation", 
+        desc: "Fill skill gaps, technical leadership, knowledge transfer" 
+      },
+      { 
+        name: "Exit Strategy Support", 
+        desc: "Due diligence prep, code documentation, architecture handover" 
+      },
+    ],
+  },
+};
+---
+
+<section id="services" class="py-24 relative">
+  <div class="container mx-auto px-6">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold text-light mb-4">
+        How We Can 
+        <span class="bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent">
+          Help You
+        </span>
+      </h2>
+      <p class="text-xl text-light/60 max-w-2xl mx-auto">
+        Comprehensive software solutions tailored to your needs
+      </p>
+    </div>
+
+    <!-- Service Categories Grid -->
+    <div class="grid md:grid-cols-3 gap-8">
+      {Object.entries(serviceCategories).map(([key, category]) => (
+        <div class="group relative">
+          <!-- Card -->
+          <div class="bg-gradient-to-br from-primary-950/50 to-primary-900/30 rounded-xl border border-primary-800/30 p-8 hover:border-primary-600/50 transition-all hover:shadow-xl hover:shadow-primary-500/10">
+            <!-- Icon -->
+            <div class="w-14 h-14 bg-gradient-to-br from-primary-500 to-accent-500 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <Icons name={category.icon} size={28} class="text-white" />
+            </div>
+
+            <!-- Title -->
+            <h3 class="text-2xl font-bold text-light mb-3">{category.title}</h3>
+            <p class="text-light/60 mb-6">{category.description}</p>
+
+            <!-- Services List -->
+            <div class="space-y-4">
+              {category.services.map((service) => (
+                <details class="group/item">
+                  <summary class="cursor-pointer list-none flex items-start space-x-3 text-light/80 hover:text-primary-400 transition-colors">
+                    <Icons name="check" size={16} class="text-accent-400 mt-1 flex-shrink-0" />
+                    <span class="font-medium">{service.name}</span>
+                  </summary>
+                  <p class="ml-7 mt-2 text-sm text-light/60 animate-slide-up">
+                    {service.desc}
+                  </p>
+                </details>
+              ))}
+            </div>
+
+            <!-- CTA -->
+            <a href="#contact" class="inline-flex items-center space-x-2 text-primary-400 hover:text-primary-300 mt-6 group/link">
+              <span class="text-sm font-medium">Learn more</span>
+              <Icons name="arrow" size={16} class="group-hover/link:translate-x-1 transition-transform" />
+            </a>
+          </div>
+
+          <!-- Hover Glow Effect -->
+          <div class="absolute -inset-0.5 bg-gradient-to-r from-primary-500 to-accent-500 rounded-xl opacity-0 group-hover:opacity-20 blur transition-opacity -z-10"></div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Bottom CTA -->
+    <div class="text-center mt-16">
+      <p class="text-light/60 mb-4">Not sure what you need?</p>
+      <a href="#contact" class="inline-flex items-center space-x-2 bg-gradient-to-r from-primary-500 to-accent-500 text-white px-6 py-3 rounded-lg hover:shadow-lg hover:shadow-primary-500/25 transition-all">
+        <Icons name="calendar" size={20} />
+        <span>Schedule a Free Consultation</span>
+      </a>
+    </div>
+  </div>
+</section>
