@@ -9,11 +9,13 @@ const year = new Date().getFullYear();
     <div class="grid md:grid-cols-4 gap-8 mb-8">
       <!-- Brand -->
       <div>
-        <div class="flex items-center space-x-2 mb-4">
-          <div class="w-10 h-10 bg-gradient-to-br from-primary-500 to-accent-500 rounded-lg flex items-center justify-center">
-            <Icons name="code" size={20} class="text-white" />
-          </div>
-          <span class="text-xl font-semibold text-light">RDeLune</span>
+        <div class="flex items-center space-x-3 mb-4">
+          <img 
+            src="/images/newlogo.png" 
+            alt="rdelune logo" 
+            class="w-10 h-10"
+          />
+          <span class="text-xl font-semibold text-light">rdelune</span>
         </div>
         <p class="text-light/60 text-sm">
           Expert software consultancy delivering fast, scalable solutions.
@@ -71,7 +73,7 @@ const year = new Date().getFullYear();
     <!-- Bottom Bar -->
     <div class="border-t border-primary-800/30 pt-8 flex flex-col md:flex-row justify-between items-center">
       <p class="text-light/40 text-sm mb-4 md:mb-0">
-        © {year} RDeLune Software Consultancy. All rights reserved.
+        © {year} rdelune software consultancy. All rights reserved.
       </p>
       <div class="flex space-x-6">
         <a href="/privacy" class="text-light/40 hover:text-primary-400 transition-colors text-sm">Privacy Policy</a>

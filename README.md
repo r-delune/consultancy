@@ -1,4 +1,4 @@
-# RDeLune Software Consultancy Website
+# rdelune software consultancy website
 
 Lightning-fast, modern consultancy website built with Astro, TypeScript, and Tailwind CSS.
 
